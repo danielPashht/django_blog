@@ -1,0 +1,158 @@
+1. create project: django-admin startproject [project_name]
+2. create app: python manage.py startapp [app_name]
+
+Help: python manage.py --help
+Django server: python manage.py runserver
+Make migrations: python manage.py makemigrations
+Migrate: python manage.py migrate
+Run tests: python manage.py test
+Shell with settings: python manage.py shell
+
+
+Set PostgreSQL database:
+
+    1. install psycopg2: pip install psycopg2
+    2. set DATABASES in settings.py:
+        DATABASES = {
+            'default': {
+                "ENGINE": 'django.db.backends.postgresql',
+                'NAME': 'mydatabase',
+    3. migrate: python manage.py migrate
+
+All DB connection data and Django secret key should be stored in environment variables. (.env)
+
+3. create model:
+    - create class in models.py
+    - python manage.py makemigrations
+    - python manage.py migrate
+4. create view:
+    - create function in views.py
+    - create url in urls.py
+5. create template:
+    - create html file in templates folder
+    - render template in view function
+6. create static file:
+    - create static folder in app folder
+    - create css, js, img folder in static folder
+    - load static file in template
+7. create form:
+    - create form class in forms.py
+    - render form in template
+    - handle form in view function
+8. create admin:
+    - create superuser: python manage.py createsuperuser
+    - register model in admin.py
+9. create test:
+    - create test class in tests.py
+    - run test: python manage.py test
+
+Part 2:
+
+10. create middleware:
+    - create middleware class in middleware.py
+    - add middleware in settings.py
+11. create signal:
+    - create signal function in signals.py
+    - connect signal in apps.py
+12. create custom management command:
+    - create command class in management/commands folder
+    - run command: python manage.py [command_name]
+13. create custom template tag:
+    - create tag function in templatetags folder
+    - load tag in template
+14. create custom template filter:
+    - create filter function in templatetags folder
+    - load filter in template
+15. create custom template context processor:
+    - create context processor function in context_processors.py
+    - add context processor in settings.py
+16. create custom template loader:
+    - create loader class in loaders.py
+    - add loader in settings.py
+17. create custom template backend:
+    - create backend class in backends
+    - add backend in settings.py
+18. create custom template engine:
+    - create engine class in engines.py
+    - add engine in settings.py
+19. create custom authentication backend:
+    - create backend class in backends
+    - add backend in settings.py
+20. create custom user model:
+    - create user model class in models.py
+    - add user model in settings.py
+21. create custom user manager:
+    - create user manager class in managers
+    - add user manager in user model
+22. create custom user serializer:
+    - create user serializer class in serializers
+    - add user serializer in settings.py
+23. create custom user authentication:
+    - create user authentication class in authentication
+    - add user authentication in settings.py
+24. create custom user permissions:
+    - create user permissions class in permissions
+    - add user permissions in user model
+25. create custom user groups:
+    - create user groups class in groups
+    - add user groups in user model
+26. create custom user profile:
+    - create user profile class in models.py
+    - add user profile in user model
+27. create custom user registration:
+    - create user registration class in views.py
+    - add user registration in urls.py
+28. create custom user login:
+    - create user login class in views.py
+    - add user login in urls.py
+29. create custom user logout:
+    - create user logout class in views.py
+    - add user logout in urls.py
+30. create custom user password reset:
+    - create user password reset class in views.py
+    - add user password reset in urls.py
+31. create custom user password change:
+    - create user password change class in views.py
+    - add user password change in urls.py
+32. create custom user profile update:
+    - create user profile update class in views.py
+    - add user profile update in urls.py
+33. create custom user email verification:
+    - create user email verification class in views.py
+    - add user email verification in urls.py
+34. create custom user email confirmation:
+    - create user email confirmation class in views.py
+    - add user email confirmation in urls.py
+35. create custom user email change:
+    - create user email change class in views.py
+    - add user email change in urls.py
+36. create custom user email unsubscribe:
+    - create user email unsubscribe class in views.py
+    - add user email unsubscribe in urls.py
+37. create custom user email notification:
+    - create user email notification class in views.py
+    - add user email notification in urls.py
+38. create custom user email template:
+    - create user email template class in views.py
+    - add user email template in urls.py
+39. create custom user email sender:
+    - create user email sender class in views.py
+    - add user email sender in urls.py
+40. create custom user email receiver:
+    - create user email receiver class in views.py
+    - add user email receiver in urls.py
+41. create custom user email reader:
+    - create user email reader class in views.py
+    - add user email reader in urls.py
+42. create custom user email writer:
+    - create user email writer class in views.py
+    - add user email writer in urls.py
+43. create custom user email attachment:
+    - create user email attachment class in views.py
+    - add user email attachment in urls.py
+44. create custom user email signature:
+    - create user email signature class in views.py
+    - add user email signature in urls.py
+45. create custom user email filter:
+    - create user email filter class in views.py
+    - add user email filter in urls.py

@@ -16,7 +16,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-7(-$*r9m1o)remfw8^jeo90im7%z2evwof8-0o*@6)=ibfgx0n"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,7 +33,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_app",
+    "articles",
+    "comments",
+    "users",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -46,12 +49,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "lesson.urls"
+ROOT_URLCONF = "core.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -64,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "lesson.wsgi.application"
+WSGI_APPLICATION = "core.wsgi.application"
 
 
 # Database
@@ -72,11 +75,12 @@ WSGI_APPLICATION = "lesson.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": 'django.db.backends.postgresql',
+        "ENGINE": env("DB_ENGINE"),
         "NAME": "django_app",
-        "USER": "postgres",
-        "PASSWORD": "946815",
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
         "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 

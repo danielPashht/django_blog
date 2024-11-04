@@ -22,7 +22,8 @@
         margin-bottom: 5px;
         color: #7f8c8d;
     }
-    .login-form input[type="text"] {
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
         width: 100%;
         padding: 10px;
         margin-bottom: 20px;
@@ -44,14 +45,21 @@
     .login-form input[type="submit"]:hover {
         background-color: #2980b9;
     }
+    .register-hint {
+        text-align: center;
+        color: #7f8c8d;
+        margin-top: 20px; /* Adjust the value as needed */
+
+    }
 </style>
 
 <div class="login-container">
     <h2 class="login-title">Login</h2>
-    <form class="login-form" action="#" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
         <input type="submit" value="Login">
     </form>
+    <p class="register-hint">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
 </div>
 {% endblock %}
